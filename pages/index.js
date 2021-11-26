@@ -6,7 +6,7 @@ import Banner from '../components/banner';
 export default function Home() {
 	const handleOnBannerBtnClick = () => {
 		console.log("banner button clicked");
-	}
+	};
 	return (
 		<div className={styles.container}>
 			<Head>
@@ -16,7 +16,9 @@ export default function Home() {
 			</Head>
 
 			<main className={styles.main}>
-				<Banner buttonText="View stores nearby!" handleOnClick={handleOnBannerBtnClick} />
+				<Banner buttonText="View stores nearby!"
+					handleOnClick={handleOnBannerBtnClick}
+				/>
 			</main>
 
 			<footer className={styles.footer}> </footer>
