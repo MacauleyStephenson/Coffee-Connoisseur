@@ -30,8 +30,8 @@ export default function Home() {
 				return (
 				<Card
 				name={coffeeStore.name}
-				imgUrl="/static/hero-image.png"
-				href="/coffee-store/darkhorse-coffee"
+				imgUrl={coffeeStore.imgUrl}
+				href={`/coffee-store/${coffeeStore.id}`}
 				/>
 				);
 				})}
