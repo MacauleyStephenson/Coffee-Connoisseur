@@ -6,13 +6,13 @@ import styles from '../styles/Home.module.css';
 import Banner from '../components/banner';
 import Card from '../components/card';
 
-import coffeeStore from '../data/coffee-stores.json';
+import coffeeStoreData from '../data/coffee-stores.json';
 
 export async function getStaticProps(context) {
 	console.log("Hi getSaticProps");
 	return {
 		props: {
-			coffeeStore,
+			coffeeStore: coffeeStoreData,
 		},
 	};
 }
@@ -39,7 +39,7 @@ export default function Home(props) {
 					<Image src="/static/hero-image.png" width={700} height={400} />
 				</div>
 
-				{coffeeStore.length > 0 && (
+				{props.coffeeStore.length > 0 && (
 					<>
 						<h2 className={styles.heading2}>London Coffee Stores</h2>
 						<div className={styles.cardLayout}>
