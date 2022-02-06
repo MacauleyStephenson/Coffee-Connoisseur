@@ -5,10 +5,11 @@ import CoffeeStoresData from '../../data/coffee-stores.json';
 
 export function getStaticProps(staticProps) {
 	const params = staticProps.params;
+	console.log('params', params);
 	return {
 		props: {
 			CoffeeStore: CoffeeStoresData.find(coffeeStore => {
-				return coffeeStore.id === 0;//dynamic id
+				return coffeeStore.id.toString() === params.id;//dynamic id
 			})
 		}
 	}
@@ -24,17 +25,23 @@ export function getStaticPaths() {
 	};
 }
 
-const CoffeeStore = () => {
+const CoffeeStore = (props) => {
 	const router = useRouter();
 	console.log('router', router);
-	return (<div>Coffee Store Page {router.query.id}
-		<Link href="/">
-			<a>Back to home</a>
-		</Link>
-		<Link href="/coffee-store/dynamic">
-			<a>Go to page dynamic</a>
-		</Link>
-	</div>
+
+	console.log('props', props);
+	return (
+		<div>
+			Coffee Store Page {router.query.id}
+			<Link href="/">
+				<a>Back to home</a>
+			</Link>
+			<Link href="/coffee-store/dynamic">
+				<a>Go to page dynamic</a>
+			</Link>
+			<p>{props.CoffeeStore.address}</p>
+			<p>{props.CoffeeStore.name}</p>
+		</div>
 	);
 };
 
