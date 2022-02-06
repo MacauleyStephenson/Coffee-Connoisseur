@@ -20,6 +20,7 @@ export function getStaticPaths() {
 			{ params: { id: '0' } },
 			{ params: { id: '1' } }
 		],
+		fallback: false,
 	};
 }
 
