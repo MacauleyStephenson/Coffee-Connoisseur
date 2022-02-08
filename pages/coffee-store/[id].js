@@ -29,6 +29,8 @@ const CoffeeStore = (props) => {
 	const router = useRouter();
 	console.log('router', router);
 
+	const { address, name, neighbourhood } = props.CoffeeStore;
+
 	if (router.isFallback) {
 		return <div>Loading...</div>
 	}
@@ -44,8 +46,9 @@ const CoffeeStore = (props) => {
 			<Link href="/coffee-store/dynamic">
 				<a>Go to page dynamic</a>
 			</Link>
-			<p>{props.CoffeeStore.address}</p>
-			<p>{props.CoffeeStore.name}</p>
+			<p>{address}</p>
+			<p>{name}</p>
+			<p>{neighbourhood}</p>
 		</div>
 	);
 };
