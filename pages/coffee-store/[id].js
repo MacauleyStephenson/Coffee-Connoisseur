@@ -41,7 +41,7 @@ const CoffeeStore = (props) => {
 		return <div>Loading...</div>
 	}
 
-	const { address, name, neighbourhood } = props.CoffeeStore;
+	const { address, name, neighbourhood, imgUrl } = props.CoffeeStore;
 
 	console.log('props', props);
 	return (
@@ -49,18 +49,23 @@ const CoffeeStore = (props) => {
 			<Head>
 				<title>{name}</title>
 			</Head>
+			<div className={styles.container}>
 			<div className={styles.col1}>
 				Coffee Store Page {router.query.id}
+				<div className={styles.backToHomeLink}>
 				<Link href="/">
 					<a>Back to home</a>
 				</Link>
+				</div>
 				<Link href="/coffee-store/dynamic">
 					<a>Go to page dynamic</a>
 				</Link>
-				<p>{name}</p>
+				<div className={styles.nameWrapper}>
+				<h1 className={styles.name}>{name}</h1>
+				</div>
 				<Image
 				src={imgUrl}
-				width={60}
+				width={600}
 				height={360}
 				className={styles.storeImg}
 				alt={name}>
@@ -70,6 +75,7 @@ const CoffeeStore = (props) => {
 			<div className={styles.col2}>
 				<p>{address}</p>
 				<p>{neighbourhood}</p>
+			</div>
 			</div>
 		</div>
 	);
