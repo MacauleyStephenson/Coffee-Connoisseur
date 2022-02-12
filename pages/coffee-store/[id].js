@@ -57,15 +57,11 @@ const CoffeeStore = (props) => {
 			</Head>
 			<div className={styles.container}>
 			<div className={styles.col1}>
-				Coffee Store Page {router.query.id}
 				<div className={styles.backToHomeLink}>
 				<Link href="/">
 					<a>Back to home</a>
 				</Link>
 				</div>
-				<Link href="/coffee-store/dynamic">
-					<a>Go to page dynamic</a>
-				</Link>
 				<div className={styles.nameWrapper}>
 				<h1 className={styles.name}>{name}</h1>
 				</div>
